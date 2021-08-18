@@ -25,7 +25,6 @@ Boas práticas - Evitar o uso de OR e != nas clausulas where.
 
 
 
-
 ==================================================== DUVIDAS PARTE 1:======================================================================================================
 
 1. Bloco anonimo (é uma função ou procedure ) DECLARE - BEGIN - END? 
@@ -56,7 +55,7 @@ e reutilização caso a aplicação precise ser migrada para outra tecnologia.
 
 2. Junção de tabelas sem uso de Inner Join, Left Join, apenas com ligação entre as chaves ?
 
-3.
+
 
 
 

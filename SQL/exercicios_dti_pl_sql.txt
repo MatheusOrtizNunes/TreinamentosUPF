@@ -1,0 +1,272 @@
+-- Exercício 01
+SELECT SYSDATE, trunc(SYSDATE + 7) FROM dual;
+
+
+-- Exercício 02
+SELECT b.codbanca,
+       b.coddepto,
+       b.codcurriculo,
+       b.coddisciplina,
+       b.mesoferecimento,
+       b.anooferecimento,
+       b.tipobanca,
+       b.qtdcreditopratico,
+       b.qtdcreditoteorico,
+       b.codcurso,
+       b.codturma,
+       b.qtdminimaaluno,
+       b.projecaoalunodevem,
+       b.qtdcadchamadabanca,
+       b.tipoatabanca,
+       b.sitprof,
+       b.controla,
+       b.agrupada,
+       b.qtdcredpraticos,
+       b.qtdcredestagiosuperv,
+       b.qtdcredcpp,
+       b.credteoricoextra,
+       b.credpraticoextra,
+       b.credestsuperextra,
+       b.credcppextra,
+       b.concentradaponto,
+       b.controlaponto,
+       b.datalistaespera,
+       b.discferias,
+       b.roleletivainst,
+       b.codversaoementa
+  FROM acdesenv.banca b
+ ORDER BY b.codbanca DESC;
+ 
+
+--- Exercício 3
+SELECT c.codcurso, c.descricao
+  FROM acdesenv.curso c
+ WHERE c.codtipocurso = 1
+   AND c.codsubtipocurso = 1;
+   
+
+-- Exercício 4
+SELECT a.codaluno,
+       a.codcidadenatural,
+       a.tiposexo,
+       a.datanascimento,
+       a.rg,
+       a.tipoestadocivil,
+       a.nome,
+       a.codinstensino1grau,
+       a.codinstensino2grau,
+       a.codreligiao,
+       a.codorgaoexpedidor,
+       a.codprofissaopai,
+       a.codprofissaomae,
+       a.cpf,
+       a.uforgaoexpedidor,
+       a.tituloeleitor,
+       a.zonaeleitoral,
+       a.secaoeleitoral,
+       a.fonelocaltrabpai,
+       a.fonelocaltrabmae,
+       a.nomepai,
+       a.nomemae,
+       a.documentomilitar,
+       a.gruposanguineo,
+       a.fatorrh,
+       a.email,
+       a.anoconc2grau,
+       a.senhaweb,
+       a.statusweb,
+       a.dataexpedicaorg,
+       a.codpaisnacionalidade,
+       a.coddeffisica,
+       a.coddefvisual,
+       a.coddefauditiva,
+       a.anoconclusao2grau,
+       a.coddefmental,
+       a.condutastipicas,
+       a.altashabilidades,
+       a.outrasnecessidades,
+       a.cnhnumero,
+       a.cnhcategoria,
+       a.emaildoc,
+       a.cor,
+       a.cpfmae,
+       a.rgmae,
+       a.codorgexpmae,
+       a.uforgexpmae,
+       a.dtorgexpmae,
+       a.celularmae,
+       a.emailmae,
+       a.localtrabalhomae,
+       a.cpfpai,
+       a.rgpai,
+       a.codorgexppai,
+       a.uforgexppai,
+       a.dtorgexppai,
+       a.celularpai,
+       a.emailpai,
+       a.localtrabalhopai
+  FROM acdesenv.aluno a
+ WHERE ROWNUM <= 5;
+ 
+
+-- -- Exercício 5
+SELECT a.codaluno,
+       a.tiposexo,
+       CASE
+         WHEN a.tiposexo = 'M' then
+          'Masculino'
+         WHEN a.tiposexo = 'F' then
+          'Feminino'
+       END
+  FROM acdesenv.aluno a;
+
+SELECT a.codaluno,
+       a.tiposexo,
+       DECODE(a.tiposexo, 'F', 'Femenino', 'M', 'Masculino')
+  FROM acdesenv.aluno a;
+  
+       
+ -- -- Exercício 6
+SELECT  a.codaluno || ' - ' || a.nome
+FROM acdesenv.aluno a;
+
+
+-- Exercício 7
+SELECT COUNT(b.codbanca)
+FROM acdesenv.banca b
+WHERE b.anooferecimento = 2018 AND b.mesoferecimento = 7
+
+
+-- Exercício 8
+SELECT c.descricao, c.codcursoinep
+  FROM acdesenv.curso c
+ WHERE c.codcursoinep IS NOT NULL
+ 
+
+-- Exercício 9 -- Dúvida da resolução ??
+SELECT c.descricao, NVL(c.codcursoinep, 0) as INEP FROM acdesenv.curso c
+
+
+-- Exercício 10 
+SELECT a.nome, t.codcurso
+  FROM acdesenv.aluno a
+ INNER JOIN acdesenv.turmaaluno t
+    ON (t.codaluno = a.codaluno)
+ WHERE a.codaluno = 150000
+ 
+
+-- Exercício 11
+SELECT a.codaluno || ' - ' || a.nome as ALUNO,
+       c.codcurso || '-' || c.descricao as CURSO
+  FROM acdesenv.aluno a
+ INNER JOIN acdesenv.turmaaluno ta
+    ON (ta.codaluno = a.codaluno)
+ INNER JOIN acdesenv.curso c
+    ON (c.codcurso = ta.codcurso)
+ WHERE a.codaluno = 165322;
+ 
+
+-- Exercício 12
+SELECT c.codcurso,
+       c.descricao,
+       LENGTH(c.descricao) as QUANTIDADE_DE_LETRAS,
+       substr(c.descricao, 1, 10) as DEZ_PRIMEIRAS_LETRAS
+  FROM acdesenv.curso c
+ WHERE LENGTH(c.descricao) =
+       (SELECT MAX(LENGTH(c.descricao)) FROM acdesenv.curso c)
+
+
+-- Exercício 13
+CREATE OR REPLACE FUNCTION fun_exibe_mensagem()
+RETURN VARCHAR2(200)
+IS
+	v_dia varchar2(2);
+	v_mes varchar2(20);
+	v_ano varchar2(4);
+	v_msg varchar2(200);
+	v_hora_atual vachar2(4);
+	v_periodo varchar2(15);
+BEGIN	
+	v_dia := SELECT EXTRACT(DD FROM DATE SYSDATE) FROM DUAL;
+	v_mes := SELECT EXTRACT(MONTH FROM DATE SYSDATE) FROM DUAL;
+	v_ano := SELECT EXTRACT(YEAR FROM DATE SYSDATE) FROM DUAL;	
+	v_hora_atual := SELECT to_char(SYSDATE, 'HH24') FROM dual;
+					
+	IF v_hora_atual >= 0 AND v_hora_atual <=5 THEN
+		v_periodo := 'Madrugada';
+	ELSIF v_hora_atual >= 6 AND v_hora_atual <= 11 THEN
+		v_periodo := 'Manhã';
+	ELSIF v_hora_atual >= 12 0 AND v_hora_atual <=18 THEN
+		v_periodo := 'Tarde';
+	ELSE
+		v_periodo := 'Noite';				
+	END IF;
+		
+	v_msg := 'Estamos no período da || v_periodo ||.
+				O ano atual é || v_ano|| , o mês atual é || v_mes || e o dia de hoje é || v_dia||. 
+				Horário atual: || v_hora_atual||.';
+	
+	RETURN v_msg;
+END;
+	   
+-- Exercício 14
+CREATE OR REPLACE FUNCTION fun_retorna_nome_aluno(p_matricula IN acdesenv.aluno.codaluno%TYPE)
+RETURN VARCHAR2(200);
+IS
+	v_nome_aluno VARCHAR2(200);
+BEGIN
+	SELECT a.nome INTO v_nome_aluno FROM aluno a WHERE a.codaluno = p_matricula;	
+EXCEPTION
+	WHEN no_data_found THEN 
+		RETURN 'Aluno não encontrado ';
+	
+	RETURN v_nome_aluno;
+END;
+
+
+-- Exercício 15
+CREATE OR REPLACE PROCEDURE prc_busca_aluno()
+IS 
+	r_dados acdesenv.aluno%ROWTYPE;
+	CURSOR cur_alunos is
+		SELECT a.codaluno || '-' || INITCAP(a.nome) || '|'|| a.codcurso || '-' || c.descricao
+				  FROM acdesenv.aluno a,
+			INNER JOIN acdesenv.curso c ON (c.codaluno = a.codaluno)
+			INNER JOIN acdesenv.turmaaluno ta ON (ta.codaluno = a.codaluno)
+				 WHERE ta.tiposituacaoacademica = 1 
+				   AND c.codtipocurso = 1
+				   AND ta.ano = 2019 
+				   AND ta.mes BETWEEN 01 AND 03;
+	
+BEGIN
+	OPEN cur_alunos;
+	LOOP
+		FETCH cur_alunos 
+		 INTO r_dados;		 
+		 CASE
+			WHEN r_dados.descricao = "DIREITO"  THEN;
+				r_dados.descricao := "Curso de Direito";	
+		END;	
+		CASE
+			WHEN r_dados.codcurso IN (3589,  3587, 3588) THEN
+				r_dados.descricao := "Administração";	
+		END;
+	EXIT WHEN cur_alunos%NOTFOUND;
+	END LOOP;
+	CLOSE cur_alunos;
+					
+END prc_busca_aluno;
+
+
+
+	   
+
+	   
+	   
+-- SQL Solicitacao
+SELECT caa.DATA, caa.DATACHEGADA, caa.DATAINICATEND, caa.HORAINI, caa.DATAFIMATEND,	caa.HORAFIM	TT,	caa.CODATENDIMENTO,	caa.TIPOFILA, caa.CODCENTROCUSTO
+FROM acdesenv.caa caa
+INNER JOIN acdesenv.tipofila tf ON (tf.codtipofila = caa.codtipofila)
+WHERE caa.codcentrocusto = 1952 
+AND caa.DATA >= TO_DATE('01/01/2019', 'DD/MM/YYYY') AND caa.DATA < TO_DATE('01/01/2020', 'DD/MM/YYYY');
+

@@ -1,0 +1,65 @@
+Nomenclatura:
+
+Ambiente de desenvolvimento (DEV, TEST E PRODUÇÃO)
+Nomencatura de funções
+Nomencatura de variaveis e parametros
+
+Cursor
+
+Tratamento de exceções
+- no_data_found
+- to_many_rows
+- other
+
+Demonstrou como ter parametro de retorno (out_msg, out_cod = 0,1)
+
+Controle de transações: commit e rollback
+
+SQL Joins:
+ - Left Join e Inner Join
+
+SQL indices - funcionamento geral
+
+Boas práticas - Evitar o uso de OR e != nas clausulas where.
+	      - Datas uma opção ao between seria utilizar data_inicio >= and < data_final  -- (Um dia posterior a desejada)
+
+
+
+
+==================================================== DUVIDAS PARTE 1:======================================================================================================
+
+1. Bloco anonimo (é uma função ou procedure ) DECLARE - BEGIN - END? 
+R: Bloco PL/SQL
+
+2. Demonstrar retorno do status no meu bloco anonimo  - (msg de sucesso ou erro ) 0 ou 1
+R: Demonstrado
+
+3. Não utilizar OR no clausula WHERE ??
+R: Deixa de utilizar indices e faz um full acess table (varre todos os dados da tabela)
+
+4. No Cursor é obrigatorio ter valor?
+R: No cursor não é obrigatório, é obrigatório ter valor no INTO, e apenas um valor (0 ou > de 1 da erro)
+
+5. Tecla de atalho para formatar o codigo? Escrever em maiuscula ou miniscula ?
+R: Tamanho da fonte ajustado. Formatar código pesquisar na ferramenta.
+
+6. Como fazer chamadas de uma função para outra ? 
+R: Demonstrado no treinamento da Alura
+
+7. A aplicação PHP/Delphi funciona como "intermediario" ? As regras de negócios são implementadas no Oracle?
+R: Uma boa prática seria o desenvolviemento das regras de negocio no banco de dados Oracle, para melhor desempenho
+e reutilização caso a aplicação precise ser migrada para outra tecnologia.
+
+							PARTE 2.
+
+1. Utilização de datas - consulta entre datas (between) ou (> <)?
+
+2. Junção de tabelas sem uso de Inner Join, Left Join, apenas com ligação entre as chaves ?
+
+3.
+
+
+
+
+
+

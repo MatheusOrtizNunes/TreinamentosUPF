@@ -1,0 +1,43 @@
+2. Sql para hoje de manhã:
+Tabelas Utilizadas:
+gudesenv.gssolicitacao
+gudesenv.GSTPSITUACAOSOL
+gudesenv.gssituacaosol
+rhdesenv.empregado
+
+Selecionar todas as solicitações criadas no período de '01/03/2020' and '10/03/2020' e mostrar o historico de situações da solicitação, utilizando a tabela gudesenv.gssituacaosol.
+Campos:
+codsolicitacao - gssolicitacao
+titulo - gssolicitacao
+dtsolicitacao - gssolicitacao
+
+gssituacaosol.dtsituacao - gssituacaosol
+gssituacaosol.codtpsituacao - GSTPSITUACAOSOL
+descricao do tipo da situacao - GSTPSITUACAOSOL
+
+matricula do empregado - rhdesenv.empregado
+nome do empregado - rhdesenv.empregado
+
+**Por ordem de data da situação
+
+
+-----RESPOSTA PROVISORIA:
+
+SELECT sl.codsolicitacao,
+       sl.titulo,
+       sl.dtsolicitacao,
+       st.dtsituacao,
+       st.codtpsituacao,
+       tst.descricao,
+       rh.matricula,
+       rh.nome as NOME_DO_EMPREGADO
+  FROM gudesenv.gssolicitacao sl
+ INNER JOIN gudesenv.gssituacaosol st
+    on sl.codsolicitacao = st.codsolicitacao
+  LEFT JOIN gudesenv.GSTPSITUACAOSOL tst
+    ON tst.codtpsituacao = st.codtpsituacao
+ INNER JOIN rhdesenv.empregado rh
+    ON sl.matricula = rh.matricula
+ WHERE sl.dtsolicitacao BETWEEN '01/03/2020' and '10/03/2020'
+ ORDER BY st.dtsituacao
+ 

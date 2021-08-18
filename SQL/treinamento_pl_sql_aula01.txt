@@ -55,6 +55,8 @@ e reutilização caso a aplicação precise ser migrada para outra tecnologia.
 
 2. Junção de tabelas sem uso de Inner Join, Left Join, apenas com ligação entre as chaves ?
 
+3.
+
 
 
 

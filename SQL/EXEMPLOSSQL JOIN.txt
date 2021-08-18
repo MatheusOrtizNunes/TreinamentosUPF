@@ -1,0 +1,98 @@
+
+SELECT M.* 
+FROM RHDESENV.EMPREGADO M  =
+INNER JOIN USUARIO U
+ON U.MATRICULA = M.MATRICULA 
+WHERE U.STATUS = 'T'
+
+EXIBIR O NOME DE  TODAS OS EMPREGADOS DO DESENVOLVIMENTO EM QUE POSSUEM MATRICULA DE STATUS (T)
+
+SELECT M.NOME
+FROM RHDESENV.EMPREGADO M
+INNER JOIN USUARIO U
+ON U.MATRICULA = M.MATRICULA 
+WHERE U.STATUS = 'T'
+
+
+
+EXIBIR O SEXO DE  TODAS OS EMPREGADOS DO DESENVOLVIMENTO EM QUE POSSUEM MATRICULA DE STATUS (T)
+
+
+SELECT M.SEXO
+FROM RHDESENV.EMPREGADO M
+INNER JOIN USUARIO U
+ON U.MATRICULA = M.MATRICULA
+WHERE U.STATUS = 'T'
+
+
+
+select *
+from aluno
+insert into aluno values (1, 'José', 25, '033-123-123-456-01');
+insert into aluno values (2, 'Ana', 23, '033-124-456-02');
+insert into aluno values (3, 'Juca', 27, '032-123-526-03');
+insert into aluno values (4, 'Ronaldo', 30, '023-123-256-87');
+insert into aluno values (5, 'Robesvaldo', 41, '014-741-789-96');
+insert into aluno values (6, 'Paula' ,54, '456-547-8545-23');
+ CREATE TABLE SCURSOS
+ (ID INT PRIMARY KEY, 
+ NOMECUR VARCHAR(256) NOT NULL,
+ ALUNO VARCHAR(256) NOT NULL,
+ SITUACAO VARCHAR(256) NOT NULL,
+ NMATRICULA INT);
+   SELECT *
+   FROM SCURSOS
+INSERT INTO SCURSOS VALUES (01, 'JAVA-WEB', 'RONALDO', 'E. ANDAMENTO', 5632);
+insert into SCURSOS values (2, 'MECANICO', 'ROBESVALDO', 'T.PAROU', 6532);
+insert into SCURSOS values (3, 'CONTABILIDADE', 'JOSÉ', 'E.ANDAMENTO', 4512);
+insert into SCURSOS values (4, 'DESENVOLVERDOR', 'JUCA', 'E.ANDAMENTO', 1212);
+insert into SCURSOS values (5, 'CARPINTEIRO', 'RONALDO', 'T.PAROU', 4521);
+insert into SCURSOS values (6, 'CONTADOR', 'ANA', 'E.ANDAMENTO', 6325);
+insert into SCURSOS values (7, 'BAR-MEN', 'PAULA', 'E.ANDAMENTO', 5236); 
+
+
+
+
+
+1. Sql para fazer a tarde:
+Trabalhar com as seguintes tabelas:
+   GUDESENV.GSSOLICITACAO
+   GUDESENV.GSTPSOLICITACAO
+   GUDESENV.GSTPSITUACAO
+   RHDESENV.EMPREGADO
+
+Selecionar todas as solicitações que foram digitadas no período de '01/05/2021' até '31/05/2021', com as seguintes informações:
+CODSOLICITCAO
+TITULO
+
+DESCRICAO
+
+DTSOLICITACAO
+CODTPSOLICITACAO
+TIPO DA SOLICITACAO
+CODTPSITUACAO
+SITUAÇÃO ATUAL DA SOLICITACAO
+DTULTSITUACAO
+MATRICORIGEM
+NOME DO EMPREGADO QUE ORIGINOU A SOLICITAÇÃO
+
+
+2. Sql para hoje de manhã:
+Tabelas Utilizadas:
+gudesenv.gssolicitacao
+gudesenv.gssituacaosol
+gudesenv.GSTPSITUACAOSOL
+rhdesenv.empregado
+
+Selecionar todas as solicitações criadas no período de '01/03/2020' and '10/03/2020' e mostrar o historico de situações da solicitação, utilizando a tabela gudesenv.gssituacaosol.
+Campos:
+codsolicitacao
+titulo
+dtsolicitacao
+gssituacaosol.dtsituacao
+gssituacaosol.codtpsituacao
+descricao do tipo da situacao
+matricula do empregado
+nome do empregado
+por ordem de data da situação'
+

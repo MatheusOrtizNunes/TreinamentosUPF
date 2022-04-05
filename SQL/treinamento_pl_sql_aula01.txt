@@ -37,10 +37,10 @@ R: Demonstrado
 R: Deixa de utilizar indices e faz um full acess table (varre todos os dados da tabela)
 
 4. No Cursor é obrigatorio ter valor?
-R: No cursor não é obrigatório, é obrigatório ter valor no INTO, e apenas um valor (0 ou > de 1 da erro)
+R: No cursor não é obrigatório, é obrigatório ter valor no INTO, e apenas um valor (0 ou > de 1 retorna erro)
 
 5. Tecla de atalho para formatar o codigo? Escrever em maiuscula ou miniscula ?
-R: Tamanho da fonte ajustado. Formatar código pesquisar na ferramenta.
+R: Tamanho da fonte ajustado. Ajustar formatação "Preferences" -> User Interface -> Code Assistent ou PL/SQL Beautifier
 
 6. Como fazer chamadas de uma função para outra ? 
 R: Demonstrado no treinamento da Alura
@@ -54,12 +54,19 @@ e reutilização caso a aplicação precise ser migrada para outra tecnologia.
 1. Utilização de datas - consulta entre datas (between) ou (> <)?
 
 2. Junção de tabelas sem uso de Inner Join, Left Join, apenas com ligação entre as chaves ?
-
-3.
-
+R: O padrão é utilizar join's - Where deixar apenas para filtros.
 
 
 
+
+User interface Editor - Auto Replace
+
+User interface Code Assits
+User interface Key Configuration
+
+Dentro do trigger tenho :new, :old
+
+Interval - SQL - extract from year to month por exmplo
 
 
 

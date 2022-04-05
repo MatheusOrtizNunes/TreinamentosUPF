@@ -1,0 +1,74 @@
+ Internet e seu funcionamento (Cliente x Servidor, O que é: Back-end e Front-end);
+ Principais tags HTML5:
+	- Elementos: <h1>...<h6>, <p>, <br>, <hr>, <pre>
+	- Links internos e externos;
+	- Listas: ordenadas (type= "1", "A", "a", "I", "i", start para tipo "1" ) e não-ordenadas(disc, square, circle)	
+	- Atributos dos elementos: 
+		href;
+		src (URL absoluto: "https://www.w3schools.com/images/img_girl.jpg" e URL relativa quando usar cada um, qual é o mais indicado);
+		img: width e height, alt - atributo obrigatório, pois é utilizado leitor de telas;		
+		title	
+	- Algumas tags novas do HTML5: <address>, <time>, <video>, <audio>, <mark>, <header>, <footer>,  
+									Negrito: <strong> ou <b> Qual utilizar?
+									Italico: <em> ou <i> Qual devo usar?	
+	- Formulários HTML5: Agora a validação no proprio HTML!
+		 <input> e os novos tipos aceitos
+		Tipo	Descrição	
+		tel	        A entrada é um número de telefone.
+		search	    A entrada é um campo de busca.
+		url	        A entrada é uma URL.
+		email	    A entrada é um ou mais endereço de email.
+		datetime	A entrada é uma data e/ou hora.
+		time		A entrada é uma hora.
+		datetime-local	A entrada é uma data e hora local.
+		number		A entrada é um número.
+		range		A entrada é uma faixa de valores.
+		color		A entrada é uma cor em haxadecimal como #FF00FF.
+		placeholder	Especifica uma dica rápida que descreve o valor esperado em um campo de entrada.	
+	
+	- Tabelas
+		
+	- Padrão visual de UPF e práticas recomendadas
+	
+	- CSS3:
+		As 3 formas de utilizar (inline, interno, externo);		
+		Definindo a fonte;
+		Escolhendo as cores, paleta de cores;
+		id e class qual a diferença;
+		Variaveis em .css;
+		Modelo de caixas; (O que é e como usar esse modelo)		
+		
+			
+	
+	
+	
+**** Ideias de desafio:
+	 Site de conteúdo aprendido durante os treinamentos, que deverá conter: 
+	
+	- Tela de login (semelhante a da intranet UPF) com
+		Campos: E-mail (placeholder de email) e Senha
+		Área "Esqueci minha senha":
+			Nome,
+			Email
+			Nova Senha
+			
+		Botão "Entrar":	
+		
+	- Página .html do conteudo aprendido durante as semanas de teinamento;
+		(O que deverá conter? - Livre);
+		Sugestões: links externos e internos, tabelas, .pdf, Youtube, inserir ex. de código-fonte
+		
+	
+	- Certificado:
+	   Gerar um certificado .HTML que deverá conter:
+	    Titulo: CERTIFICADO
+	    Nome completo do concluinte do curso;
+		Nome do curso;
+		Instituição de ensino que ministrou o curso (nome e logo);
+		Carga horária do curso;
+		Assinatura da instituição gestora;
+		Local, data e, se relevante, validade da certificação.
+					
+	
+	
+ 

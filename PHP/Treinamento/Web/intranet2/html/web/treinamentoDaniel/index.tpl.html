@@ -1,0 +1,110 @@
+<section class="content container">
+    {MENSAGEMBOASVINDAS}
+
+    <ul>
+        <!-- BEGIN BLC_NOMES -->
+        <li>{NUMEROORDEM} - {NOME}</li>
+        <!-- END BLC_NOMES -->
+    </ul>
+
+    <!-- BEGIN BLC_TEXTO -->
+    <p>
+        sdghhhhh hfdgfdjghu ifjwpem fdweopf sdghhhhh hfdgfdjghu ifjwpem fdweopf
+        sdghhhhh hfdgfdjghu ifjwpem fdweopf sdghhhhh hfdgfdjghu ifjwpem fdweopf
+        <br />
+        sdghhhhh hfdgfdjghu ifjwpem fdweopf sdghhhhh hfdgfdjghu ifjwpem fdweopf
+        sdghhhhh hfdgfdjghu ifjwpem fdweopf sdghhhhh hfdgfdjghu ifjwpem fdweopf
+    </p>
+    <!-- END BLC_TEXTO -->
+
+    {TESTES}
+
+    <form class="form-horizontal max-width text-align-left" action="index.php" method="post">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h1 class="box-title">Título da aplicação</h1>
+            </div>
+
+            <div class="box-body padding-0">
+                <div class="form-item">
+
+                    <label for="it_nome">
+                        Nome
+                    </label>
+
+                    <input type="text" class="form-control" name="nome" id="it_nome" maxlength="250"
+                        placeholder="Digite o nome...">
+
+                    <span class="fa fa-refresh fa-spin position-input-loader display-none"></span>
+                    <div class="error-message"></div>
+
+                </div>
+
+                <div class="form-item">
+
+                    <label for="it_sobrenome">
+                        Sobrenome
+                    </label>
+
+                    <input type="text" class="form-control" name="sobrenome" id="it_sobrenome" maxlength="250"
+                        placeholder="Digite o sobrenome...">
+
+                    <span class="fa fa-refresh fa-spin position-input-loader display-none"></span>
+                    <div class="error-message"></div>
+
+                </div>
+            </div>
+
+            <div class="box-footer background-color-light-gray">
+                <div class="right">
+                    <a class="btn btn-default" href="#" role="button">
+                        <span class="fa fa-undo margin-right-10"></span>
+                        Cancelar
+                    </a>
+
+                    <button type="submit" class="btn btn-primary margin-left-10">
+                        <span class="fa fa-save margin-right-10"></span>
+                        Salvar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="box box-primary">
+        <div class="box-header">
+            <h1 class="box-title">Cidades</h1>
+        </div>
+
+        <div class="box-body padding-0">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Estado</th>
+                        <th>Código do País</th>
+                        <th>Nome do País</th>
+                        <th>Código IBGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- BEGIN BLC_CIDADES -->
+                    <tr>
+                        <td>{CODCIDADE}</td>
+                        <td>{NOMECIDADE}</td>
+                        <td>{NOMEUF}</td>
+                        <td>{CODPAIS}</td>
+                        <td>{NOMEPAIS}</td>
+                        <td>{CODMEC}</td>
+                    </tr>
+                    <!-- END BLC_CIDADES -->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+</section>

@@ -1,0 +1,42 @@
+											Git
+
+Visão Geral:
+- Armazenar o código (segurança, organização )
+- Trabalhar em equipes
+- Controle de versões
+- Contar uma "história" atraves das descrições dos meus commits.
+
+Diferencias do Git para outras ferramentas (SVN por exemplo)
+Cada membro da equipe faz um clone local do projeto. O git executa os principais comandos localmente o que deixa mais rápido, pois não trafega os
+dados na internett a todo momento.
+
+Principais Comandos:
+    git version
+	
+	git add
+	git restore --staged
+	git commit -m "A descrição que quero informar".
+	git status	
+	git log(pode ser usado com o parametro --oneline, para exibr linha a linha de commits)
+	git branch - lista as branches existentes.
+	git branch nome_da_nova_branch
+	git checkout - Para  trocar de branch
+	git merge nome_da_brench_que_irei_fazer_merge
+
+
+Pull - Open pull dialog
+Escolho a 1ª ou 3ª opção
+
+Origin são os arquivos do repositorio.
+
+
+Branch
+Com o git Branch cria um nova linha (uma ramificação) no desenvolvimento do projeto. Mantendo a linha principal estável e andando.
+Master é o branch que vem por padrão.
+
+Push/Pull
+Push é a aão que vc irá fazer para atualizar o repositorio remoto.
+Pull traz a maquina do servidor para maquina local.
+
+Canal Rodrigo Branas
+https://www.youtube.com/watch?v=C18qzn7j4SM

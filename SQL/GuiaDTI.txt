@@ -1,0 +1,11 @@
+Links para página de padrões
+
+http://dti.upf.br/wiki/index.php/Padr%C3%B5es_de_desenvolvimento_Oracle
+http://dti.upf.br/wiki/index.php/Padroniza%C3%A7%C3%A3o_de_objetos_Oracle
+
+Arquivos:
+DemonstracaoPadroesDTI_Tabelas.sql -> Exemplos de criação de tabelas
+FormatandoDatas.sql -> Exeplos de formatação e cálculo com datas
+ConfigPLSQLDeveloper.docx -> Principais configurações do PL/SQL Developer
+Ora11gNF.pptx -> Apresentação Oracle 11g New Features
+

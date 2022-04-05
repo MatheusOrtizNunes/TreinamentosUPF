@@ -1,7 +1,0 @@
-	   
--- SQL Solicitacao
-SELECT caa.DATA, caa.DATACHEGADA, caa.DATAINICATEND, caa.HORAINI, caa.DATAFIMATEND,	caa.HORAFIM	TT,	caa.CODATENDIMENTO,	caa.TIPOFILA, caa.CODCENTROCUSTO
-FROM acdesenv.caa caa
-INNER JOIN acdesenv.tipofila tf ON (tf.codtipofila = caa.codtipofila)
-WHERE caa.codcentrocusto = 1952 
-AND caa.DATA >= TO_DATE('01/01/2019', 'DD/MM/YYYY') AND caa.DATA <= TO_DATE('31/12/2019', 'DD/MM/YYYY');
